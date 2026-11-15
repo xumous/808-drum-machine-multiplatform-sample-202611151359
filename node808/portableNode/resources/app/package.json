@@ -1,0 +1,45 @@
+{
+  "name": "node808",
+  "version": "1.0.0",
+  "private": true,
+  "description": "808 synthetic drum machine - Electron + WebAssembly AudioWorklet",
+  "main": "main.js",
+  "author": "guji808",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build:wasm": "powershell -ExecutionPolicy Bypass -File tools/build-wasm.ps1",
+    "dist": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "33.4.11",
+    "electron-builder": "24.13.3"
+  },
+  "build": {
+    "appId": "com.guji808.node808",
+    "productName": "node808",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json",
+      "app/**/*"
+    ],
+    "win": {
+      "icon": "../app.ico",
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "portable": {
+      "artifactName": "node808-portable.exe"
+    }
+  }
+}

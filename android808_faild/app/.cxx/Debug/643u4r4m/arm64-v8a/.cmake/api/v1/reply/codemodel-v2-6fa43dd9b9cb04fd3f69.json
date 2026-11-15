@@ -1,0 +1,50 @@
+{
+  "configurations": [
+    {
+      "directories": [
+        {
+          "build": ".",
+          "jsonFile": "directory-.-Debug-d0094a50bb2071803777.json",
+          "minimumCMakeVersion": {
+            "string": "3.6.0"
+          },
+          "projectIndex": 0,
+          "source": ".",
+          "targetIndexes": [
+            0
+          ]
+        }
+      ],
+      "name": "Debug",
+      "projects": [
+        {
+          "directoryIndexes": [
+            0
+          ],
+          "name": "android808core",
+          "targetIndexes": [
+            0
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "directoryIndex": 0,
+          "id": "808core::@6890427a1f51a3e7e1df",
+          "jsonFile": "target-808core-Debug-21d83850ac37764b44e4.json",
+          "name": "808core",
+          "projectIndex": 0
+        }
+      ]
+    }
+  ],
+  "kind": "codemodel",
+  "paths": {
+    "build": "C:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/.cxx/Debug/643u4r4m/arm64-v8a",
+    "source": "C:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/src/main/jni"
+  },
+  "version": {
+    "major": 2,
+    "minor": 3
+  }
+}

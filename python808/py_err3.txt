@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "C:\Users\Happy\Pictures\watermark\guji808_202611142022\python808\main.py", line 1339, in <module>
+    main()
+  File "C:\Users\Happy\Pictures\watermark\guji808_202611142022\python808\main.py", line 1333, in main
+    app = App(root, core)
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\Happy\Pictures\watermark\guji808_202611142022\python808\main.py", line 389, in __init__
+    self.rebuild()
+  File "C:\Users\Happy\Pictures\watermark\guji808_202611142022\python808\main.py", line 480, in rebuild
+    self.update_ui()
+  File "C:\Users\Happy\Pictures\watermark\guji808_202611142022\python808\main.py", line 846, in update_ui
+    self.update_slider_value(i, values[i], texts[i], i == 4)
+  File "C:\Users\Happy\Pictures\watermark\guji808_202611142022\python808\main.py", line 902, in update_slider_value
+    self.canvas.itemconfigure(self.items[key + "_val"], text=text)
+                              ~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ss0_val'

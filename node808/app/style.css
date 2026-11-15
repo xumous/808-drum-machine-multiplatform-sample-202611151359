@@ -1,0 +1,123 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #0b0d10;
+    overflow: hidden;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#stage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 40%, #14171d 0%, #0b0d10 70%);
+}
+
+#panel {
+    display: block;
+    background: #0e1014;
+    border-radius: 6px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.65), 0 0 0 1px #23262d;
+    cursor: default;
+}
+
+/* ---------------- SONG 编辑器 ---------------- */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 6, 9, 0.72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-box {
+    width: 580px;
+    max-height: 84vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #1a1d23;
+    border: 1px solid #2f343e;
+    border-radius: 8px;
+    padding: 14px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.7);
+}
+
+.modal-title {
+    color: #ff7a30;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.song-list {
+    flex: 1;
+    min-height: 240px;
+    max-height: 52vh;
+    overflow-y: auto;
+    background: #24282f;
+    border: 1px solid #2f343e;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.song-row {
+    padding: 5px 8px;
+    font: 12px Consolas, monospace;
+    color: #c9ced8;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.song-row:nth-child(odd) {
+    background: #272b33;
+}
+
+.song-row.sel {
+    background: #7a3a18;
+    color: #fff;
+}
+
+.song-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.song-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.modal button {
+    background: #2f343e;
+    color: #e4e7ed;
+    border: 1px solid #3c424d;
+    border-radius: 4px;
+    padding: 7px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background: #3a404b;
+}
+
+.modal button.primary {
+    background: #ff7a30;
+    border-color: #ff7a30;
+    color: #1a1208;
+    font-weight: 600;
+    flex: 1;
+}

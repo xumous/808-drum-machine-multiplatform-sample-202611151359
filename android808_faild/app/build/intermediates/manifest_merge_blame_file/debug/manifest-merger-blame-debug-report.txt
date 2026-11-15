@@ -1,0 +1,69 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.guji808.android"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="28"
+8-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml
+10
+11    <uses-feature
+11-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:4:5-91
+12        android:name="android.hardware.audio.output"
+12-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:4:19-63
+13        android:required="false" />
+13-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:4:64-88
+14    <uses-feature
+14-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:5:5-83
+15        android:name="android.software.midi"
+15-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:5:19-55
+16        android:required="false" />
+16-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:5:56-80
+17
+18    <application
+18-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:7:5-27:19
+19        android:allowBackup="false"
+19-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:8:9-36
+20        android:debuggable="true"
+21        android:extractNativeLibs="false"
+22        android:hardwareAccelerated="true"
+22-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:13:9-43
+23        android:icon="@mipmap/ic_launcher"
+23-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:9:9-43
+24        android:label="@string/app_name"
+24-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:11:9-41
+25        android:roundIcon="@mipmap/ic_launcher"
+25-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:10:9-48
+26        android:theme="@style/Theme.Android808" >
+26-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:12:9-48
+27        <activity
+27-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:15:9-26:20
+28            android:name="com.guji808.android.MainActivity"
+28-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:16:13-41
+29            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|uiMode"
+29-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:19:13-94
+30            android:exported="true"
+30-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:17:13-36
+31            android:launchMode="singleTop"
+31-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:20:13-43
+32            android:screenOrientation="sensorLandscape"
+32-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:18:13-56
+33            android:theme="@style/Theme.Android808" >
+33-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:21:13-52
+34            <intent-filter>
+34-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:22:13-25:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:23:17-69
+35-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:23:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:24:17-77
+37-->C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\AndroidManifest.xml:24:27-74
+38            </intent-filter>
+39        </activity>
+40    </application>
+41
+42</manifest>

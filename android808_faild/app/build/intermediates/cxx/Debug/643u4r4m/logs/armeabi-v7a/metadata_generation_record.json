@@ -1,0 +1,44 @@
+[
+  {
+    "level_": 0,
+    "message_": "Start JSON generation. Platform version: 28 min SDK version: armeabi-v7a",
+    "file_": "C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\src\\main\\jni\\CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -71919813
+  },
+  {
+    "level_": 0,
+    "message_": "JSON \u0027C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\.cxx\\Debug\\643u4r4m\\armeabi-v7a\\android_gradle_build.json\u0027 was up-to-date",
+    "file_": "C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\src\\main\\jni\\CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 251839275
+  },
+  {
+    "level_": 0,
+    "message_": "JSON generation completed without problems",
+    "file_": "C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\src\\main\\jni\\CMakeLists.txt",
+    "tag_": "debug|armeabi-v7a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 168092399
+  }
+]

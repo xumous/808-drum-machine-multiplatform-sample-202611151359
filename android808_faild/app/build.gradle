@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.guji808.android'
+    compileSdk 33
+    ndkVersion '27.0.12077973'
+
+    defaultConfig {
+        applicationId 'com.guji808.android'
+        minSdk 28
+        targetSdk 33
+        versionCode 1
+        versionName '1.0.0'
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64'
+        }
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_PLATFORM=android-28'
+                cFlags '-O2'
+            }
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('../keystore/android808-release.jks')
+            storePassword '808808'
+            keyAlias 'android808'
+            keyPassword '808808'
+            /* minSdk 28：APK Signature Scheme v2 已全覆盖，故只启用 v2（更安全，避免 v1/Janus） */
+            v1SigningEnabled false
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+        debug {
+            debuggable true
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path file('src/main/jni/CMakeLists.txt')
+            version '3.22.1'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

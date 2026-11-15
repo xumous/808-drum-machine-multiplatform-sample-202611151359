@@ -1,0 +1,8 @@
+com.guji808.android.app-pngs-0 C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\build\generated\res\pngs\debug
+com.guji808.android.app-resValues-1 C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\build\generated\res\resValues\debug
+com.guji808.android.app-rs-2 C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\build\generated\res\rs\debug
+com.guji808.android.app-packageDebugResources-3 C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.guji808.android.app-packageDebugResources-4 C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.guji808.android.app-merged_res-5 C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\build\intermediates\merged_res\debug
+com.guji808.android.app-debug-6 C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\debug\res
+com.guji808.android.app-main-7 C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\src\main\res

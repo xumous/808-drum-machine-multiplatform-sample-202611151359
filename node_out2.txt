@@ -1,0 +1,14 @@
+
+[n808] workArea {"width":1536,"height":824} scale 1.25 => window 1136 675
+[n808] contentBounds {"x":199,"y":86,"width":1138,"height":675} bounds {"x":192,"y":56,"width":1152,"height":712}
+[renderer:1] [n808] stage css 1138.4000244140625 675.2000122070312 inner 1138 675 dpr 1.25 (app://local/renderer.js:1162)
+[renderer:2] %cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security
+  Policy set or a policy with "unsafe-eval" enabled. This exposes users of
+  this app to unnecessary security risks.
+
+For more information and help, consult
+https://electronjs.org/docs/tutorial/security.
+This warning will not show up
+once the app is packaged. (node:electron/js2c/renderer_init:2)
+[renderer:1] [n808] worklet ready, snapBytes=10856 ac=running (app://local/renderer.js:169)
+[renderer:1] [n808] first render block, frames=128 (app://local/renderer.js:179)

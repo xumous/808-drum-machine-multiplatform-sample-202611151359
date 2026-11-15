@@ -1,0 +1,11 @@
+# ninja log v5
+20	7963	8163918774686843	CMakeFiles/808core.dir/jni808_android.c.o	21853246a122b34
+4	8053	8163918774915927	CMakeFiles/808core.dir/core808_io.c.o	a2de0ec2006bbc22
+26	12658	8163918821498985	CMakeFiles/808core.dir/core808.c.o	2b875c1961330056
+12658	17162	8163918862880482	C:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/build/intermediates/cxx/RelWithDebInfo/6s582760/obj/armeabi-v7a/lib808core.so	c92fa641f681fd64
+4	264	8163953259137980	CMakeFiles/808core.dir/jni808_android.c.o	21853246a122b34
+6	442	8163953260917666	CMakeFiles/808core.dir/core808_io.c.o	a2de0ec2006bbc22
+8	1084	8163953267337988	CMakeFiles/808core.dir/core808.c.o	2b875c1961330056
+1085	1526	8163953269229426	C:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/build/intermediates/cxx/RelWithDebInfo/6s582760/obj/armeabi-v7a/lib808core.so	c92fa641f681fd64
+5	1470	8163973311028765	CMakeFiles/808core.dir/core808.c.o	2b875c1961330056
+1471	1570	8163973311949196	C:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/build/intermediates/cxx/RelWithDebInfo/6s582760/obj/armeabi-v7a/lib808core.so	c92fa641f681fd64

@@ -1,0 +1,19 @@
+@echo off
+"C:\\Users\\Happy\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\cmake.exe" ^
+  "-HC:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\src\\main\\jni" ^
+  "-DCMAKE_SYSTEM_NAME=Android" ^
+  "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON" ^
+  "-DCMAKE_SYSTEM_VERSION=28" ^
+  "-DANDROID_ABI=armeabi-v7a" ^
+  "-DCMAKE_ANDROID_ARCH_ABI=armeabi-v7a" ^
+  "-DANDROID_NDK=C:\\Users\\Happy\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973" ^
+  "-DCMAKE_ANDROID_NDK=C:\\Users\\Happy\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973" ^
+  "-DCMAKE_TOOLCHAIN_FILE=C:\\Users\\Happy\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\build\\cmake\\android.toolchain.cmake" ^
+  "-DCMAKE_MAKE_PROGRAM=C:\\Users\\Happy\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+  "-DCMAKE_C_FLAGS=-O2" ^
+  "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\build\\intermediates\\cxx\\Debug\\643u4r4m\\obj\\armeabi-v7a" ^
+  "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\build\\intermediates\\cxx\\Debug\\643u4r4m\\obj\\armeabi-v7a" ^
+  "-DCMAKE_BUILD_TYPE=Debug" ^
+  "-BC:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\.cxx\\Debug\\643u4r4m\\armeabi-v7a" ^
+  -GNinja ^
+  "-DANDROID_PLATFORM=android-28"

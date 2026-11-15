@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\Happy\Pictures\watermark\guji808_202611142022\python808\main.py", line 1336, in <module>
+    main()
+  File "C:\Users\Happy\Pictures\watermark\guji808_202611142022\python808\main.py", line 1330, in main
+    app = App(root, core)
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\Happy\Pictures\watermark\guji808_202611142022\python808\main.py", line 389, in __init__
+    self.rebuild()
+  File "C:\Users\Happy\Pictures\watermark\guji808_202611142022\python808\main.py", line 480, in rebuild
+    self.update_ui()
+  File "C:\Users\Happy\Pictures\watermark\guji808_202611142022\python808\main.py", line 764, in update_ui
+    self.canvas.itemconfigure(self.items["tname%d" % t],
+                              ~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'tname0'

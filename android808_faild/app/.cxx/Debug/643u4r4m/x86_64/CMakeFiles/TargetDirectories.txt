@@ -1,0 +1,3 @@
+C:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/.cxx/Debug/643u4r4m/x86_64/CMakeFiles/808core.dir
+C:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/.cxx/Debug/643u4r4m/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/.cxx/Debug/643u4r4m/x86_64/CMakeFiles/rebuild_cache.dir

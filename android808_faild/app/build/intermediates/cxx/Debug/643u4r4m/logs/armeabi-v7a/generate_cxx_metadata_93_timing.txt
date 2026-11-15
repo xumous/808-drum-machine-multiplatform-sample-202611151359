@@ -1,0 +1,13 @@
+# C/C++ build system timings
+generate_cxx_metadata
+  execute-generate-process
+    [gap of 7329ms]
+    exec-configure 135058ms
+    [gap of 189ms]
+  execute-generate-process completed in 142576ms
+  [gap of 66ms]
+  remove-unexpected-so-files 35ms
+  [gap of 649ms]
+  write-metadata-json-to-file 11ms
+generate_cxx_metadata completed in 143974ms
+

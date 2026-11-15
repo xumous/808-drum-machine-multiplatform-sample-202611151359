@@ -1,0 +1,3 @@
+ninja: Entering directory `C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\.cxx\RelWithDebInfo\6s582760\x86_64'
+[1/2] Building C object CMakeFiles/808core.dir/core808.c.o
+[2/2] Linking C shared library C:\Users\Happy\Pictures\watermark\guji808_202611142022\android808\app\build\intermediates\cxx\RelWithDebInfo\6s582760\obj\x86_64\lib808core.so

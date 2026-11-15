@@ -1,0 +1,17 @@
+[
+  {
+    "directory": "C:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/.cxx/Debug/643u4r4m/armeabi-v7a",
+    "command": "C:\\Users\\Happy\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=armv7-none-linux-androideabi28 --sysroot=C:/Users/Happy/AppData/Local/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/windows-x86_64/sysroot -D_808core_EXPORTS -IC:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/src/main/jni -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -O2 -fno-limit-debug-info  -fPIC -O2 -fno-fast-math -Wall -std=gnu99 -o CMakeFiles\\808core.dir\\core808.c.o -c C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\src\\main\\jni\\core808.c",
+    "file": "C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\src\\main\\jni\\core808.c"
+  },
+  {
+    "directory": "C:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/.cxx/Debug/643u4r4m/armeabi-v7a",
+    "command": "C:\\Users\\Happy\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=armv7-none-linux-androideabi28 --sysroot=C:/Users/Happy/AppData/Local/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/windows-x86_64/sysroot -D_808core_EXPORTS -IC:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/src/main/jni -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -O2 -fno-limit-debug-info  -fPIC -O2 -fno-fast-math -Wall -std=gnu99 -o CMakeFiles\\808core.dir\\core808_io.c.o -c C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\src\\main\\jni\\core808_io.c",
+    "file": "C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\src\\main\\jni\\core808_io.c"
+  },
+  {
+    "directory": "C:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/.cxx/Debug/643u4r4m/armeabi-v7a",
+    "command": "C:\\Users\\Happy\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=armv7-none-linux-androideabi28 --sysroot=C:/Users/Happy/AppData/Local/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/windows-x86_64/sysroot -D_808core_EXPORTS -IC:/Users/Happy/Pictures/watermark/guji808_202611142022/android808/app/src/main/jni -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -O2 -fno-limit-debug-info  -fPIC -O2 -fno-fast-math -Wall -std=gnu99 -o CMakeFiles\\808core.dir\\jni808_android.c.o -c C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\src\\main\\jni\\jni808_android.c",
+    "file": "C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611142022\\android808\\app\\src\\main\\jni\\jni808_android.c"
+  }
+]

@@ -1,0 +1,5 @@
+
+[n808] workArea {"width":1536,"height":824} scale 1.25 avail 1229 659 => window 1105 593
+[renderer:1] [n808] stage css 1106.4000244140625 595.2000122070312 inner 1106 595 dpr 1.25 (app://local/renderer.js:1206)
+[renderer:1] [n808] worklet ready, snapBytes=10856 ac=running (app://local/renderer.js:179)
+[renderer:1] [n808] first render block, frames=128 (app://local/renderer.js:189)
