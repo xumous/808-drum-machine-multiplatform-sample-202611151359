@@ -1,0 +1,26 @@
+# ============================================================================
+#  XU-808 鼓机 · Rust 版（作者：徐某）
+#
+#  设计原则：
+#    · 零第三方 crate —— 只用 std + 手写 extern "system" 调用 Win32；
+#    · 因此断网也能 cargo build --release，不会去 crates.io 拉包；
+#    · release 用 windows 子系统，输出单个无依赖 EXE。
+# ============================================================================
+[package]
+name = "xu808"
+version = "1.0.0"
+edition = "2021"
+authors = ["徐某"]
+description = "XU-808 十六声部模拟鼓机（Rust + Win32 + waveOut）"
+build = "build.rs"
+
+[[bin]]
+name = "xu808"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3          # 音频回调对算力敏感，必须全开优化
+lto = true             # 跨 crate（这里其实只有一个 crate）内联
+codegen-units = 1      # 单编译单元，进一步优化
+panic = "abort"        # 音频线程里绝不能 unwind 穿过 FFI 边界
+strip = true           # 去掉符号，EXE 更小

@@ -1,0 +1,42 @@
+16-Nov-2026 10:14:51.677 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server.服务器版本: Apache Tomcat/9.0.99
+16-Nov-2026 10:14:51.682 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器构建:        Feb 4 2025 20:08:08 UTC
+16-Nov-2026 10:14:51.685 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器版本号:      9.0.99.0
+16-Nov-2026 10:14:51.687 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 操作系统名称:      Windows 10
+16-Nov-2026 10:14:51.687 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS.版本:           10.0
+16-Nov-2026 10:14:51.688 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 架构:              amd64
+16-Nov-2026 10:14:51.688 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java 环境变量:     C:\jdk17-tmp\jdk-17.0.21+9
+16-Nov-2026 10:14:51.690 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java虚拟机版本:    17.0.21+9
+16-Nov-2026 10:14:51.690 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM.供应商:        Eclipse Adoptium
+16-Nov-2026 10:14:51.691 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99
+16-Nov-2026 10:14:51.692 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99
+16-Nov-2026 10:14:51.732 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       --add-opens=java.base/java.lang=ALL-UNNAMED
+16-Nov-2026 10:14:51.734 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       --add-opens=java.base/java.io=ALL-UNNAMED
+16-Nov-2026 10:14:51.736 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       --add-opens=java.base/java.util=ALL-UNNAMED
+16-Nov-2026 10:14:51.736 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-Nov-2026 10:14:51.736 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-Nov-2026 10:14:51.737 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.home=c:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99
+16-Nov-2026 10:14:51.739 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.base=c:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99
+16-Nov-2026 10:14:51.739 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.io.tmpdir=c:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\temp
+16-Nov-2026 10:14:51.740 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.config.file=c:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\conf\logging.properties
+16-Nov-2026 10:14:51.740 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-Nov-2026 10:14:51.755 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 在java.library.path:[C:\jdk17-tmp\jdk-17.0.21+9\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;c:\Users\Happy\AppData\Local\Programs\Trae CN\resources\app\modules\ai-agent\bin;\\?\C:\Users\Happy\.trae-cn\plugins\trae-remote-official\lark\1.0.7\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Users\Happy\AppData\Local\UniversalTranscoder\ffmpeg;C:\Users\Happy\AppData\Local\Programs\DeepSeekHarness\resources\runtime\cli\bin;C:\Users\Happy\AppData\Local\Programs\Python\Python314\Scripts\;C:\Users\Happy\AppData\Local\Programs\Python\Python314\;C:\Users\Happy\AppData\Local\Programs\Python\Launcher\;C:\Users\Happy\AppData\Local\Microsoft\WindowsApps;C:\Users\Happy\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.2\bin;C:\Users\Happy\.dotnet\tools;C:\Program Files (x86)\Nmap;c:\Users\Happy\AppData\Local\Programs\Trae CN\resources\app\bin\lib;c:\Users\Happy\AppData\Local\Programs\Trae CN\resources\app\node_modules\@vscode\ripgrep\bin;.]上找不到基于APR的Apache Tomcat本机库，该库允许在生产环境中获得最佳性能
+16-Nov-2026 10:14:52.516 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 ["http-nio-18080"]
+16-Nov-2026 10:14:52.614 信息 [main] org.apache.catalina.startup.Catalina.load 服务器在[1805]毫秒内初始化
+16-Nov-2026 10:14:52.721 信息 [main] org.apache.catalina.core.StandardService.startInternal 正在启动服务[Catalina]
+16-Nov-2026 10:14:52.735 信息 [main] org.apache.catalina.core.StandardEngine.startInternal 正在启动 Servlet 引擎：[Apache Tomcat/9.0.99]
+16-Nov-2026 10:14:52.763 信息 [main] org.apache.catalina.startup.HostConfig.deployWAR 正在部署web应用程序存档文件[C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\xu808-javaee.war]
+16-Nov-2026 10:14:53.873 信息 [main] org.apache.catalina.startup.HostConfig.deployWAR web应用程序存档文件[C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\xu808-javaee.war]的部署已在[1,108]ms内完成
+16-Nov-2026 10:14:53.885 信息 [main] org.apache.catalina.startup.HostConfig.deployWAR 正在部署web应用程序存档文件[C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\xu808-jsp.war]
+16-Nov-2026 10:14:54.089 信息 [main] org.apache.catalina.startup.HostConfig.deployWAR web应用程序存档文件[C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\xu808-jsp.war]的部署已在[204]ms内完成
+16-Nov-2026 10:14:54.104 信息 [main] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\docs]
+16-Nov-2026 10:14:54.185 信息 [main] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\docs]的部署已在[81]毫秒内完成
+16-Nov-2026 10:14:54.186 信息 [main] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\examples]
+16-Nov-2026 10:14:55.212 信息 [main] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\examples]的部署已在[1,026]毫秒内完成
+16-Nov-2026 10:14:55.213 信息 [main] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\host-manager]
+16-Nov-2026 10:14:55.339 信息 [main] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\host-manager]的部署已在[125]毫秒内完成
+16-Nov-2026 10:14:55.339 信息 [main] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\manager]
+16-Nov-2026 10:14:55.405 信息 [main] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\manager]的部署已在[65]毫秒内完成
+16-Nov-2026 10:14:55.406 信息 [main] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\ROOT]
+16-Nov-2026 10:14:55.493 信息 [main] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\tools\apache-tomcat-9.0.99\webapps\ROOT]的部署已在[87]毫秒内完成
+16-Nov-2026 10:14:55.505 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄["http-nio-18080"]
+16-Nov-2026 10:14:56.223 信息 [main] org.apache.catalina.startup.Catalina.start [3607]毫秒后服务器启动

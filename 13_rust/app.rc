@@ -1,0 +1,40 @@
+/* ==========================================================================
+ *  app.rc —— 资源脚本（作者：徐某）
+ *
+ *  只有两件事：
+ *    1. 把 app.ico 编成资源 ID = 1 的图标，UI 里 LoadIconW(hInst, MAKEINTRESOURCE(1)) 取用；
+ *    2. 写版本信息，方便在资源管理器里看到这是徐某的 XU-808。
+ *  编译：rc.exe /nologo /fo app.res app.rc  （build.rs 会自动做这一步）
+ * ========================================================================== */
+#pragma code_page(65001)
+#include <windows.h>
+
+1 ICON "app.ico"
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION    1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK  0x3fL
+ FILEFLAGS      0x0L
+ FILEOS         VOS_NT_WINDOWS32
+ FILETYPE       VFT_APP
+ FILESUBTYPE    VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "CompanyName",      "徐某"
+            VALUE "FileDescription",  "XU-808 鼓机"
+            VALUE "FileVersion",      "1.0.0.0"
+            VALUE "InternalName",     "xu808"
+            VALUE "OriginalFilename", "xu808.exe"
+            VALUE "ProductName",      "XU-808 Rhythm Composer"
+            VALUE "ProductVersion",   "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END

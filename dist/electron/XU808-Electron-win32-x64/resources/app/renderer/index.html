@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>XU-808 鼓机 - 徐某 (Electron)</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<!-- 顶部走带条 -->
+<header id="top">
+    <div class="logo">
+        <div class="logo-main">XU-808</div>
+        <div class="logo-sub">RHYTHM COMPOSER · 徐某 · 16 VOICE ANALOG</div>
+    </div>
+
+    <button class="big" id="btnPlay">▶ PLAY</button>
+    <button class="big" id="btnStop">■ STOP</button>
+
+    <div class="group">
+        <label>BPM</label>
+        <div class="row">
+            <input id="bpm" max="300" min="40" step="0.5" type="number" value="120">
+            <input id="bpmRange" max="300" min="40" step="1" type="range" value="120">
+        </div>
+    </div>
+
+    <button class="big small" id="btnTap">TAP</button>
+
+    <div class="group">
+        <label>SWING</label>
+        <div class="row">
+            <input id="swing" max="75" min="0" step="1" type="range" value="0">
+            <span id="swingLabel">0%</span>
+        </div>
+    </div>
+
+    <div class="group">
+        <label>PATTERN</label>
+        <div class="row">
+            <select id="pattern"></select>
+            <label class="inline">步数</label>
+            <input id="steps" max="64" min="1" type="number" value="16">
+        </div>
+    </div>
+
+    <label class="check"><input id="songMode" type="checkbox"> SONG</label>
+    <button id="btnSong">歌曲链…</button>
+
+    <div class="spacer"></div>
+    <label class="check"><input id="midiClock" type="checkbox"> MIDI CLK</label>
+    <span class="dim" id="midiStatus">MIDI: -</span>
+</header>
+
+<!-- 步进网格 -->
+<section id="gridScroll">
+    <div id="grid"></div>
+</section>
+
+<!-- 通道条 -->
+<section id="stripsScroll">
+    <div id="strips"></div>
+</section>
+
+<!-- 主效果 -->
+<footer id="master">
+    <div class="master-title">MASTER · 徐某的母线</div>
+    <div class="master-slider"><label>LP 低通</label><input id="lp" max="20000" min="200" type="range"
+                                                            value="18000"><span id="lpV">18000</span></div>
+    <div class="master-slider"><label>RES 共鸣</label><input id="rez" max="800" min="50" type="range" value="90"><span
+            id="rezV">0.90</span></div>
+    <div class="master-slider"><label>HP 高通</label><input id="hp" max="800" min="10" type="range" value="28"><span
+            id="hpV">28</span></div>
+    <div class="master-slider"><label>DRIVE</label><input id="drive" max="800" min="100" type="range" value="135"><span
+            id="driveV">1.35</span></div>
+    <div class="master-slider"><label>VOL</label><input id="vol" max="100" min="0" type="range" value="80"><span
+            id="volV">80</span></div>
+    <div class="meter">
+        <div class="meter-bar"><i id="meterL"></i></div>
+        <div class="meter-bar"><i id="meterR"></i></div>
+    </div>
+    <span class="dim" id="status">CPU -</span>
+    <button id="btnSave">保存工程</button>
+    <button id="btnLoad">打开工程</button>
+    <button id="btnWav">导出 WAV</button>
+    <button id="btnMidi">导出 MIDI</button>
+    <input accept=".xu808,.json" hidden id="fileLoad" type="file">
+</footer>
+
+<!-- 步进属性弹窗 -->
+<div class="modal hidden" id="modal">
+    <div class="modal-box">
+        <h3 id="modalTitle">步进属性</h3>
+        <div class="form">
+            <label><input id="mOn" type="checkbox"> 启用</label>
+            <label><input id="mAcc" type="checkbox"> 重音 Accent</label>
+            <label>力度 Velocity <input id="mVel" max="127" min="1" type="number"></label>
+            <label>概率 Probability <input id="mProb" max="100" min="0" type="number"></label>
+            <label>微时 Micro（样本） <input id="mMicro" max="2400" min="-2400" type="number"></label>
+            <label>滚奏 Ratchet <input id="mRat" max="8" min="1" type="number"></label>
+            <label>条件触发 <select id="mCond"></select></label>
+        </div>
+        <div class="modal-buttons">
+            <button id="mOk">确定</button>
+            <button id="mCancel">取消</button>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,810 @@
+/* ============================================================================
+   xu808.css —— XU-808 深色 808 主题（09/10 两个 Web 版共用同一份视觉规范）
+   ----------------------------------------------------------------------------
+   徐某按规格书第 9 节配色：
+     背景 #121212 / 面板 #1c1c1c / 橙色 #ff7a18 / 网格线 #2e2e2e
+     步进亮 #ff7a18 / 重音 #ffd166 / 播放头 #4cc9f0
+   所有颜色先集中成 CSS 变量，换主题只需要改这一处；
+   布局用 flex + grid，不依赖任何 UI 框架，WAR 里没有第三方 CDN。
+   ============================================================================ */
+
+/* ---------- 全局变量与基础重置 ---------- */
+:root {
+    --bg: #121212; /* 页面底色，比面板更深，形成层次 */
+    --panel: #1c1c1c; /* 面板 */
+    --panel2: #232323; /* 面板内的次级块 */
+    --line: #2e2e2e; /* 网格线与分隔线 */
+    --accent: #ff7a18; /* 808 橙：步进亮起、主按钮 */
+    --accent-dim: #a34a0c; /* 橙色暗部，用于悬停/禁用 */
+    --gold: #ffd166; /* 重音 */
+    --playhead: #4cc9f0; /* 播放头 */
+    --text: #ececec;
+    --muted: #8b8b8b;
+    --danger: #ef476f;
+    --radius: 10px;
+    --font: "Segoe UI", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+    --mono: "Cascadia Mono", "Consolas", "SF Mono", monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* 宽度包含 padding，网格计算才准 */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 让滚动条也融入深色主题（Chromium/Firefox 都认） */
+* {
+    scrollbar-color: #3a3a3a var(--panel);
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #171717;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3a3a3a;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4a4a4a;
+}
+
+/* ---------- 顶部工具条 ---------- */
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 18px;
+    padding: 10px 18px;
+    background: linear-gradient(180deg, #1d1d1d, #151515);
+    border-bottom: 1px solid var(--line);
+    position: sticky; /* 滚动网格时仍能操作传输，符合“鼓机常驻控制条”的直觉 */
+    top: 0;
+    z-index: 20;
+}
+
+.brand {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    min-width: 150px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-shadow: 0 0 18px rgba(255, 122, 24, .35); /* 轻微辉光，模仿硬件灯 */
+}
+
+.tagline {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.transport {
+    display: flex;
+    gap: 8px;
+}
+
+/* 通用按钮：深色底、细边框、悬停时亮一档 */
+.btn {
+    appearance: none;
+    border: 1px solid #3a3a3a;
+    background: #242424;
+    color: var(--text);
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background .12s, border-color .12s, transform .05s;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background: #2e2e2e;
+    border-color: #4a4a4a;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #161616;
+    font-weight: 700;
+}
+
+.btn.primary:hover {
+    background: #ff8c38;
+}
+
+.btn.accent {
+    border-color: var(--accent-dim);
+    color: #ffb37a;
+}
+
+.btn.small {
+    padding: 4px 9px;
+    font-size: 11px;
+}
+
+.btn.ms.on {
+    background: var(--accent);
+    color: #161616;
+    border-color: var(--accent);
+}
+
+.btn:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+/* 分组：标签 + 控件，统一纵向对齐 */
+.group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lbl {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: .5px;
+}
+
+.val {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 11px;
+}
+
+.num, .sel, .text {
+    background: #101010;
+    border: 1px solid #3a3a3a;
+    color: var(--text);
+    border-radius: 7px;
+    padding: 5px 7px;
+    font-family: var(--mono);
+    font-size: 12px;
+    outline: none;
+}
+
+.num {
+    width: 58px;
+    text-align: center;
+}
+
+.text {
+    width: 170px;
+    font-family: var(--font);
+}
+
+.sel {
+    cursor: pointer;
+}
+
+.num:focus, .sel:focus, .text:focus {
+    border-color: var(--accent);
+}
+
+/* 滑杆：统一轨道与滑块样式，避免各浏览器差异 */
+.slider {
+    appearance: none;
+    width: 110px;
+    height: 4px;
+    background: #333;
+    border-radius: 3px;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid #1a1a1a;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid #1a1a1a;
+    cursor: pointer;
+}
+
+.check {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.check input {
+    accent-color: var(--accent);
+    width: 14px;
+    height: 14px;
+}
+
+.statusbox {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status {
+    color: var(--muted);
+    font-size: 11px;
+    max-width: 360px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.status.ok {
+    color: #7bd88f;
+}
+
+.status.err {
+    color: var(--danger);
+}
+
+/* 双声道电平表：两条横条，宽度由 worklet 峰值控制 */
+.meter {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 120px;
+}
+
+.meter i {
+    display: block;
+    height: 5px;
+    width: 0%; /* JS 每帧改 style.width */
+    background: linear-gradient(90deg, #4cc9f0 0%, #ffd166 70%, #ff7a18 100%);
+    border-radius: 3px;
+    transition: width .05s linear;
+}
+
+/* ---------- 导出选项条 ---------- */
+.exportbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    padding: 8px 18px;
+    background: #171717;
+    border-bottom: 1px solid var(--line);
+    font-size: 11px;
+}
+
+.hint {
+    color: #757575;
+    font-size: 11px;
+}
+
+/* ---------- 主体 ---------- */
+.app {
+    padding: 16px 18px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 12px 14px 14px;
+}
+
+.panelHead {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    margin-bottom: 10px;
+}
+
+.panelHead h2 {
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #cfcfcf;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.gridTools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* ---------- 步进网格 ---------- */
+.gridScroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 6px;
+}
+
+/* 表头与行必须共用同一套列宽，否则列号会错位 */
+.gridHead {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.headSpacer {
+    width: 168px;
+    flex: 0 0 168px;
+}
+
+/* 与 .trackHead 等宽 */
+.stepNums {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 38px; /* 与 .steps 的列宽一致 */
+    gap: 4px;
+}
+
+.stepNum {
+    text-align: center;
+    color: #6d6d6d;
+    font-family: var(--mono);
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.stepNum.beat {
+    color: #a9a9a9;
+}
+
+/* 每 4 步（一拍）稍亮 */
+.stepNum.playhead {
+    color: var(--playhead);
+    font-weight: 700;
+}
+
+/* 当前列高亮 */
+
+.gridRows {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.trackRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.trackHead {
+    width: 168px;
+    flex: 0 0 168px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: sticky; /* 横向滚动时声部名固定在左侧 */
+    left: 0;
+    background: var(--panel);
+    z-index: 3;
+}
+
+.padBtn {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+    background: #212121;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 4px 6px;
+    color: var(--text);
+    cursor: pointer;
+    text-align: left;
+}
+
+.padBtn b {
+    font-family: var(--mono);
+    color: var(--accent);
+    font-size: 11px;
+}
+
+.padBtn span {
+    color: #bdbdbd;
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.padBtn:hover {
+    border-color: #555;
+}
+
+.trackRow.selected .padBtn {
+    border-color: var(--accent);
+    box-shadow: inset 0 0 0 1px rgba(255, 122, 24, .35);
+}
+
+.msBtn {
+    width: 22px;
+    height: 24px;
+    padding: 0;
+    border: 1px solid #3a3a3a;
+    background: #1a1a1a;
+    color: #9a9a9a;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.msBtn:hover {
+    border-color: #666;
+    color: #ddd;
+}
+
+.msBtn.mute.on {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: #fff;
+}
+
+.msBtn.solo.on {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #1a1a1a;
+}
+
+.lenInput {
+    width: 34px;
+    background: #101010;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #9a9a9a;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-align: center;
+    padding: 3px 2px;
+    outline: none;
+}
+
+.lenInput:focus {
+    border-color: var(--accent);
+    color: var(--text);
+}
+
+/* 格子容器：列数与当前 Pattern 步数一致 */
+.steps {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 38px;
+    gap: 4px;
+}
+
+/* 单个格子 */
+.cell {
+    position: relative;
+    height: 26px;
+    border: 1px solid var(--line);
+    background: #191919;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    transition: background .08s, border-color .08s, box-shadow .08s;
+}
+
+.cell:hover {
+    border-color: #5a5a5a;
+    background: #222;
+}
+
+/* 每 4 步分组：拍点用略亮的底色，视觉上能数拍 */
+.cell.beat {
+    background: #141414;
+}
+
+/* 打开：808 橙；重音：金色 */
+.cell.on {
+    background: var(--accent);
+    border-color: #ffa45c;
+}
+
+.cell.on.beat {
+    background: var(--accent);
+}
+
+.cell.on.accent {
+    background: var(--gold);
+    border-color: #ffe6a8;
+}
+
+/* 关但被播放头扫过：只给轮廓，不干扰开关状态 */
+.cell.playhead {
+    box-shadow: 0 0 0 2px var(--playhead) inset;
+}
+
+/* 概率 <100：右侧画一个半透明点，表示“可能不响” */
+.cell.prob::after {
+    content: "";
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .45);
+}
+
+.cell.on.prob::after {
+    background: rgba(0, 0, 0, .5);
+}
+
+/* 微时非零：左下角小三角 */
+.cell.micro::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+    border-left: 4px solid rgba(0, 0, 0, .45);
+    border-top: 4px solid transparent;
+}
+
+.cell.on.micro::before {
+    border-left-color: rgba(0, 0, 0, .55);
+}
+
+/* ratchet 数量：格子中央的小数字 */
+.cell .ratchet {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, .65);
+    pointer-events: none;
+}
+
+/* 条件触发标记：右上角的字母 */
+.cell .cond {
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    font-family: var(--mono);
+    font-size: 8px;
+    color: rgba(0, 0, 0, .55);
+    pointer-events: none;
+}
+
+/* ---------- 下部面板 ---------- */
+.lower {
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) minmax(360px, 1.15fr);
+    gap: 16px;
+}
+
+@media (max-width: 980px) {
+    .lower {
+        grid-template-columns: 1fr;
+    }
+
+    /* 窄屏堆叠，参数条不至于挤成一条线 */
+}
+
+.params {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+}
+
+.params .field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #bdbdbd;
+    font-size: 11px;
+}
+
+.field .slider {
+    width: 100%;
+}
+
+.params .field .val {
+    align-self: flex-end;
+}
+
+.checkline {
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+}
+
+.padActions {
+    margin-left: auto;
+    display: flex;
+    gap: 6px;
+}
+
+.masterGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+}
+
+@media (max-width: 620px) {
+    .masterGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.masterGrid .slider {
+    width: 100%;
+}
+
+.pair {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ---------- 页脚 ---------- */
+.foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 10px 18px 18px;
+    color: #5f5f5f;
+    font-size: 11px;
+    border-top: 1px solid #1f1f1f;
+    margin-top: 8px;
+}
+
+.foot span:last-child {
+    margin-left: auto;
+    font-family: var(--mono);
+}
+
+/* ---------- 对话框 ---------- */
+.dlg {
+    background: #1b1b1b;
+    color: var(--text);
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    padding: 0;
+    min-width: 380px;
+    max-width: 92vw;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .6);
+}
+
+.dlg::backdrop {
+    background: rgba(0, 0, 0, .55);
+}
+
+/* 模态遮罩 */
+.dlgForm {
+    padding: 16px 18px;
+    margin: 0;
+}
+
+.dlgForm h3 {
+    margin: 0 0 6px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #e6e6e6;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.dlgBtns {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+/* Song 列表 */
+.songList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.songRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 6px 8px;
+}
+
+.songRow .idx {
+    color: #6f6f6f;
+    font-family: var(--mono);
+    font-size: 11px;
+    width: 22px;
+}
+
+.songRow .sel {
+    flex: 1;
+}
+
+.songRow .num {
+    width: 56px;
+}
+
+.songRow .btn {
+    padding: 3px 8px;
+}
+
+/* 小屏：顶部元素换行后不再吸顶，避免占掉半屏 */
+@media (max-width: 760px) {
+    .topbar {
+        position: static;
+    }
+
+    .statusbox {
+        margin-left: 0;
+    }
+
+    .trackHead, .headSpacer {
+        width: 140px;
+        flex-basis: 140px;
+    }
+
+    .params {
+        grid-template-columns: 1fr;
+    }
+}

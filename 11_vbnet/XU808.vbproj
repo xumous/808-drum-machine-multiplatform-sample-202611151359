@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    ===========================================================================
+      XU-808 鼓机 —— VB.NET 版工程文件（作者：徐某）
+
+      徐某在这里用的组合是 net10.0-windows + WinForms + winmm.dll：
+        · WinForms 是 Windows 自带的 GUI 框架，零第三方依赖；
+        · 音频输出走系统自带的 winmm（waveOut），同样零 NuGet；
+        · PublishSingleFile + SelfContained 把 .NET 运行时一起塞进单个 EXE，
+          目标机器“什么都不装”也能双击就响。
+
+      这与 07_csharp 的实现行为完全一致（采样率 48k、块 256、16 声部、
+      samplePos 时钟、RBJ 双二阶、tanh 过载、软限幅），但源码是纯 VB.NET，
+      不引用任何 C# 程序集。
+
+      OptionStrict = On：VB 默认是宽松转换，徐某特意打开严格模式，
+      逼自己把每一处 Double/Single/Integer 的转换写清楚——音频代码里
+      一次隐式截断就可能让音高差几个音分。
+    ===========================================================================
+  -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <!-- 根命名空间留空：每个源文件都显式写了 Namespace Xu808，
+         这样类型全名就是 Xu808.XXX，不会被根命名空间再套一层
+         （否则 StartupObject 会变成 Xu808.Xu808.Program，编译器报“找不到 Sub Main”）。 -->
+    <RootNamespace></RootNamespace>
+    <AssemblyName>XU808-VBNet</AssemblyName>
+    <!-- 入口点写在 Xu808.Program 里。
+         关键点：VB 的 WinForms 项目默认开启“应用程序框架”(MyType=WindowsForms)，
+         编译器会自己生成 Main，此时指定自定义 StartupObject 会报“找不到 Sub Main”。
+         写成 WindowsFormsWithCustomSubMain 才允许我们自己写 <STAThread> Sub Main。 -->
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <StartupObject>Xu808.Program</StartupObject>
+
+    <!-- VB 编译器开关：严格类型 + 必须声明变量 + 允许局部变量类型推断 -->
+    <OptionStrict>On</OptionStrict>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionInfer>On</OptionInfer>
+    <OptionCompare>Binary</OptionCompare>
+
+    <!-- 图标：窗口图标与 EXE 图标都用 app.ico（徐某的头像款 808） -->
+    <ApplicationIcon>app.ico</ApplicationIcon>
+
+    <Platforms>AnyCPU;x64</Platforms>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+
+    <DebugType>none</DebugType>
+    <SatelliteResourceLanguages>zh-Hans;en</SatelliteResourceLanguages>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <!-- 离线构建：不去 nuget.org 拉漏洞数据，避免 NU1900 噪声警告 -->
+    <NuGetAudit>false</NuGetAudit>
+
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Product>XU-808 鼓机</Product>
+    <Company>徐某</Company>
+    <Copyright>© 2026 徐某</Copyright>
+  </PropertyGroup>
+
+  <!-- app.ico 已经放在项目根目录，随生成复制到输出目录，供窗体运行时读取 -->
+  <ItemGroup>
+    <None Update="app.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

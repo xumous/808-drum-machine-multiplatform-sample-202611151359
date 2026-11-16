@@ -1,0 +1,4 @@
+// app.rc —— 把 app.ico 编进 EXE，任务栏/资源管理器都会显示徐某的图标。
+// 注意：资源名 APPICON 必须与 ui.c 里 LoadIconW(hInst, L"APPICON") 一致。
+#include <windows.h>
+APPICON ICON "app.ico"

@@ -1,0 +1,3 @@
+// app.rc —— 把 app.ico 嵌入 Qt C++ 版 EXE
+#include <windows.h>
+IDI_ICON1 ICON "app.ico"

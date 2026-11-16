@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 徐某：深色无 ActionBar 主题；用系统 Material 主题，避免引入 AndroidX -->
+<resources>
+    <style name="Xu808Theme" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/xu_bg</item>
+        <item name="android:colorBackground">@color/xu_bg</item>
+        <item name="android:colorAccent">@color/xu_accent</item>
+        <item name="android:colorPrimary">@color/xu_panel</item>
+        <item name="android:colorPrimaryDark">#0a0a0a</item>
+        <item name="android:statusBarColor">#0a0a0a</item>
+        <item name="android:navigationBarColor">#0a0a0a</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

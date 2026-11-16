@@ -1,0 +1,7 @@
+# XU-808 Python 版依赖
+# 安装：python -m pip install -r requirements.txt
+PySide6>=6.6        # GUI（Qt for Python），打包时会把 Qt DLL 一并收进 EXE
+numpy>=1.26         # 向量化 DSP
+scipy>=1.11         # 双二阶滤波器（lfilter）
+sounddevice>=0.4    # PortAudio 封装，提供实时音频回调线程
+pyinstaller>=6.0    # 打包单文件 EXE

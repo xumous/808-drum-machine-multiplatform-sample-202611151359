@@ -1,0 +1,32 @@
+SELFTEST OK
+XU-808 Ruby SelfTest  Ruby 4.0.9  x64-mingw32
+OK   BD 单声部峰值=0.4171
+OK   SD 单声部峰值=0.4280
+OK   LT 单声部峰值=0.4138
+OK   MT 单声部峰值=0.4120
+OK   HT 单声部峰值=0.4131
+OK   LC 单声部峰值=0.4046
+OK   MC 单声部峰值=0.4052
+OK   HC 单声部峰值=0.4051
+OK   RS 单声部峰值=0.3906
+OK   CL 单声部峰值=0.4081
+OK   CP 单声部峰值=0.2413
+OK   MA 单声部峰值=0.3962
+OK   CB 单声部峰值=0.3340
+OK   CY 单声部峰值=0.4043
+OK   OH 单声部峰值=0.3951
+OK   CH 单声部峰值=0.3960
+OK   16 声部齐奏峰值=0.4328（软限幅内）
+OK   闭镲 choke 开镲：之前 1 个活动，之后 0 个
+OK   同轨连打 8 次，活动 voice=4（上限 4）
+OK   底鼓自然衰减后 voice 自动释放
+OK   Song 链 bars=[0, 0, 1, 0, 0, 1]（期望 A,A,B,A,A,B）
+OK   WAV 大小=960044（期望 960044）
+OK   WAV 非静音字节数=955512
+OK   音序器渲染峰值=0.4328
+OK   5 秒 @120BPM 走了 40 步（期望 40）
+OK   离线渲染 5 秒耗时 3.34s（1.5x 实时）
+OK   MIDI 导出=382 字节，MThd 头正确
+OK   工程 JSON 往返：bpm=120.0, 第0轨第0步=true
+WAV=C:/Users/Happy/Pictures/watermark/guji808_202611152217/xu808_all/16_ruby/selftest_ruby.wav (960044 字节)
+MIDI=C:/Users/Happy/Pictures/watermark/guji808_202611152217/xu808_all/16_ruby/selftest_ruby.mid (382 字节)

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================================
+     09_jsp / WEB-INF/web.xml
+     徐某：这一版刻意采用“注解为主 + web.xml 只兜底”的写法。
+     Servlet 用 @WebServlet 声明（见 IndexServlet/ApiServlet），
+     web.xml 只保留欢迎页、会话、MIME 这些部署描述符层面的东西，
+     既符合纯 JSP+Servlet+JavaBean 的教学结构，又不会出现两份重复映射。
+     ============================================================================ -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- 应用名：Tomcat 管理器与日志里显示的就是它 -->
+    <display-name>XU-808 JSP MVC</display-name>
+
+    <!-- 徐某：根路径 /xu808-jsp/ 直接交给 /app 控制器，用户不用记 servlet 路径 -->
+    <welcome-file-list>
+        <welcome-file>app</welcome-file>
+    </welcome-file-list>
+
+    <!-- 会话保存工程 JSON；两小时足够一次练习，也避免内存无限增长 -->
+    <session-config>
+        <session-timeout>120</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+    </session-config>
+
+    <!-- 显式声明静态资源 MIME：某些旧容器会把 .mjs 当下载，这里一并兜住 -->
+    <mime-mapping>
+        <extension>js</extension>
+        <mime-type>application/javascript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mjs</extension>
+        <mime-type>application/javascript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>css</extension>
+        <mime-type>text/css</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>wav</extension>
+        <mime-type>audio/wav</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mid</extension>
+        <mime-type>audio/midi</mime-type>
+    </mime-mapping>
+
+    <!-- 关掉目录列表：/WEB-INF 本来不可访问，静态目录也不该被浏览。
+         徐某：Tomcat 默认 listings=false，这里不重复配置，保持 web.xml 精简 -->
+</web-app>

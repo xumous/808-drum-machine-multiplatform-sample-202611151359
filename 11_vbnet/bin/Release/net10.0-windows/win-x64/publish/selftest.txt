@@ -1,0 +1,18 @@
+﻿XU-808 鼓机 · VB.NET 自检报告（作者：徐某）
+framework=10.0.6
+base=C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\11_vbnet\bin\Release\net10.0-windows\win-x64\publish\
+pattern_samples=240000 peak=0.3629 rms=0.1154
+wav=C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\11_vbnet\bin\Release\net10.0-windows\win-x64\publish\selftest.wav
+wav_bytes=960044
+wav_seconds=5.00
+check_pattern=OK
+wav_16voice=C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\11_vbnet\bin\Release\net10.0-windows\win-x64\publish\selftest_16voice.wav
+wav_16voice_bytes=960044 peak=0.4238
+check_16voice=OK
+midi=C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\11_vbnet\bin\Release\net10.0-windows\win-x64\publish\selftest.mid
+midi_bytes=268
+check_midi=OK
+project=C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\11_vbnet\bin\Release\net10.0-windows\win-x64\publish\selftest.xu808
+project_bytes=3521104
+check_project=OK
+SELFTEST OK

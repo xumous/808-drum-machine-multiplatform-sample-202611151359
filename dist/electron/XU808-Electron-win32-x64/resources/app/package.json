@@ -1,0 +1,16 @@
+{
+  "name": "xu808-electron",
+  "version": "1.0.0",
+  "description": "XU-808 16-voice analog drum machine by 徐某 (Electron + AudioWorklet)",
+  "main": "main.js",
+  "author": "徐某",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . XU808-Electron --platform=win32 --arch=x64 --icon=app.ico --overwrite --out=dist"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-packager": "^17.1.2"
+  }
+}

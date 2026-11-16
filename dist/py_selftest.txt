@@ -1,0 +1,3 @@
+XU808 SELFTEST: samples=240000 peak=0.3764 rms=0.1186 nonzero=479762
+XU808 SELFTEST: after-stop tail-peak=0.000001
+XU808 SELFTEST: OK

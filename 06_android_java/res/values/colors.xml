@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 徐某：规格书第 9 节规定的 808 配色 -->
+<resources>
+    <color name="xu_bg">#121212</color>
+    <color name="xu_panel">#1c1c1c</color>
+    <color name="xu_accent">#ff7a18</color>
+    <color name="xu_accent2">#ffd166</color>
+    <color name="xu_playhead">#4cc9f0</color>
+    <color name="xu_line">#2e2e2e</color>
+</resources>

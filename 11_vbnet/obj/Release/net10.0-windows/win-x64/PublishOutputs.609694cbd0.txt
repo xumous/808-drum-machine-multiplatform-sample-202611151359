@@ -1,0 +1,2 @@
+c:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\11_vbnet\bin\Release\net10.0-windows\win-x64\publish\app.ico
+c:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\11_vbnet\bin\Release\net10.0-windows\win-x64\publish\XU808-VBNet.exe

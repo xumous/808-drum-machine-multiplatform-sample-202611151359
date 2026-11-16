@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "Uv5CfvnzT8o=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611152217\\xu808_all\\07_csharp\\XU808.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Happy\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.6\\microsoft.net.illink.tasks.10.0.6.nupkg.sha512",
+    "C:\\Users\\Happy\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\10.0.6\\microsoft.netcore.app.runtime.win-x64.10.0.6.nupkg.sha512",
+    "C:\\Users\\Happy\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\10.0.6\\microsoft.windowsdesktop.app.runtime.win-x64.10.0.6.nupkg.sha512",
+    "C:\\Users\\Happy\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\10.0.6\\microsoft.aspnetcore.app.runtime.win-x64.10.0.6.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "获取包漏洞数据时出错: 无法加载源 https://api.nuget.org/v3/index.json 的服务索引。",
+      "projectPath": "C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611152217\\xu808_all\\07_csharp\\XU808.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Happy\\Pictures\\watermark\\guji808_202611152217\\xu808_all\\07_csharp\\XU808.csproj",
+      "targetGraphs": []
+    }
+  ]
+}

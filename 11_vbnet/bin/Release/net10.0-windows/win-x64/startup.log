@@ -1,0 +1,11 @@
+10:13:02.584 engine
+10:13:03.034 top
+10:13:03.038 grid
+10:13:03.075 strips
+10:13:03.081 master
+10:13:03.118 audio
+10:13:03.217 midi
+10:13:03.727 shown client={Width=1500, Height=845} outer={Width=1516, Height=884} wa={X=0,Y=0,Width=1536,Height=824}
+10:13:03.728 grid={X=3,Y=67,Width=1494,Height=339} strips={X=3,Y=412,Width=1494,Height=330} master={X=3,Y=748,Width=1494,Height=94}
+10:13:03.812 after client={Width=1500, Height=769} outer={Width=1516, Height=808} grid={X=3,Y=67,Width=1494,Height=263} master={X=3,Y=672,Width=1494,Height=94}
+10:13:04.054 tick client={Width=1500, Height=769} outer={Width=1516, Height=808} grid={X=3,Y=67,Width=1494,Height=263} strips={X=3,Y=336,Width=1494,Height=330} master={X=3,Y=672,Width=1494,Height=94} meter={X=570,Y=22,Width=150,Height=22}

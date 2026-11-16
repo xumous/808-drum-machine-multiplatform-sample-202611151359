@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{.Title}}</title>
+    {{template "css" .}}
+    {{template "stacks_css"}}
+</head>
+<body>
+{{template "header" .}}
+<div id="stack-holder">
+    <div id="stack-chart"></div>
+    <div id="current-details"></div>
+</div>
+<div class="submenu" id="action-menu">
+    <span id="action-title"></span>
+    <hr>
+    <a href="./source" id="action-source" title="{{.Help.list}}">Show source code</a>
+    <a href="./source" id="action-source-tab" target="_blank" title="{{.Help.list}}">Show source in new tab</a>
+    <hr>
+    <a href="?" id="action-focus" title="{{.Help.focus}}">Focus</a>
+    <a href="?" id="action-ignore" title="{{.Help.ignore}}">Ignore</a>
+    <a href="?" id="action-hide" title="{{.Help.hide}}">Hide</a>
+    <a href="?" id="action-showfrom" title="{{.Help.show_from}}">Show from</a>
+</div>
+{{template "script" .}}
+{{template "stacks_js"}}
+<script>
+    pprofUnitDefs = {
+    {.
+        UnitDefs
+    }
+    }
+    ;
+    stackViewer({
+    {.
+        Stacks
+    }
+    },
+    {
+        {.
+            Nodes
+        }
+    }
+    )
+    ;
+</script>
+</body>
+</html>

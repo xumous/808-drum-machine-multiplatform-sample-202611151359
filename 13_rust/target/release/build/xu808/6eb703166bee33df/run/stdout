@@ -1,0 +1,3 @@
+cargo:rustc-link-arg=C:\Users\Happy\Pictures\watermark\guji808_202611152217\xu808_all\13_rust\app.res
+cargo:rerun-if-changed=app.rc
+cargo:rerun-if-changed=app.ico

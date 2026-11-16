@@ -1,0 +1,120 @@
+<div class="header">
+    <div class="title">
+        <h1><a href="./">pprof</a></h1>
+    </div>
+
+    <div class="menu-item" id="view">
+        <div class="menu-name">
+            View
+            <i class="downArrow"></i>
+        </div>
+        <div class="submenu">
+            <a href="./top" id="topbtn" title="{{.Help.top}}">Top</a>
+            <a href="./" id="graphbtn" title="{{.Help.graph}}">Graph</a>
+            <a href="./flamegraph" id="flamegraph" title="{{.Help.flamegraph}}">Flame Graph</a>
+            <a href="./peek" id="peek" title="{{.Help.peek}}">Peek</a>
+            <a href="./source" id="list" title="{{.Help.list}}">Source</a>
+            <a href="./disasm" id="disasm" title="{{.Help.disasm}}">Disassemble</a>
+        </div>
+    </div>
+
+    {{$sampleLen := len .SampleTypes}}
+    {{if gt $sampleLen 1}}
+    <div class="menu-item" id="sample">
+        <div class="menu-name">
+            Sample
+            <i class="downArrow"></i>
+        </div>
+        <div class="submenu">
+            {{range .SampleTypes}}
+            <a href="?si={{.}}" id="sampletype-{{.}}">{{.}}</a>
+            {{end}}
+        </div>
+    </div>
+    {{end}}
+
+    <div class="menu-item" id="refine">
+        <div class="menu-name">
+            Refine
+            <i class="downArrow"></i>
+        </div>
+        <div class="submenu">
+            <a href="?" id="focus" title="{{.Help.focus}}">Focus</a>
+            <a href="?" id="ignore" title="{{.Help.ignore}}">Ignore</a>
+            <a href="?" id="hide" title="{{.Help.hide}}">Hide</a>
+            <a href="?" id="show" title="{{.Help.show}}">Show</a>
+            <a href="?" id="show-from" title="{{.Help.show_from}}">Show from</a>
+            <hr>
+            <a href="?" title="{{.Help.reset}}">Reset</a>
+        </div>
+    </div>
+
+    <div class="menu-item" id="config">
+        <div class="menu-name">
+            Config
+            <i class="downArrow"></i>
+        </div>
+        <div class="submenu">
+            <a id="save-config" title="{{.Help.save_config}}">Save as ...</a>
+            <hr>
+            {{range .Configs}}
+            <a href="{{.URL}}">
+                {{if .Current}}<span class="menu-check-mark">✓</span>{{end}}
+                {{.Name}}
+                {{if .UserConfig}}<span class="menu-delete-btn" data-config={{.Name}}>🗙</span>{{end}}
+            </a>
+            {{end}}
+        </div>
+    </div>
+
+    <div class="menu-item" id="download">
+        <div class="menu-name">
+            <a href="./download">Download</a>
+        </div>
+    </div>
+
+    <div>
+        <input autocapitalize="none" autocomplete="off" id="search" placeholder="Search regexp" size=40 type="text">
+    </div>
+
+    <div class="description">
+        <a href="#" id="details" title="{{.Help.details}}">{{.Title}}</a>
+        <div id="detailsbox">
+            {{range .Legend}}
+            <div>{{.}}</div>
+            {{end}}
+        </div>
+    </div>
+</div>
+
+<div id="dialog-overlay"></div>
+
+<div class="dialog" id="save-dialog">
+    <div class="dialog-header">Save options as</div>
+    <datalist id="config-list">
+        {{range .Configs}}{{if .UserConfig}}
+        <option value="{{.Name}}"/>
+        {{end}}{{end}}
+    </datalist>
+    <input id="save-name" list="config-list" placeholder="New config" type="text"/>
+    <div class="dialog-footer">
+        <span class="dialog-error" id="save-error"></span>
+        <button id="save-cancel">Cancel</button>
+        <button id="save-confirm">Save</button>
+    </div>
+</div>
+
+<div class="dialog" id="delete-dialog">
+    <div class="dialog-header" id="delete-dialog-title">Delete config</div>
+    <div id="delete-prompt"></div>
+    <div class="dialog-footer">
+        <span class="dialog-error" id="delete-error"></span>
+        <button id="delete-cancel">Cancel</button>
+        <button id="delete-confirm">Delete</button>
+    </div>
+</div>
+
+<div id="errors">{{range .Errors}}
+    <div>{{.}}</div>
+    {{end}}
+</div>

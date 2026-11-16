@@ -1,0 +1,6 @@
+samples=240000 peak=0.373367 rms=0.121214
+wav_bytes=960044
+voices_live=16/16 peaks=[0.196,0.158,0.185,0.184,0.183,0.179,0.179,0.176,0.198,0.167,0.105,0.162,0.138,0.059,0.055,0.055]
+json_roundtrip=OK
+midi_bytes=268
+SELFTEST OK

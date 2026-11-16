@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================================
+     10_javaee / WEB-INF/web.xml
+     徐某：这一版把“配置”全部收进部署描述符，Servlet 类上不再出现任何注解。
+     这样做的价值是同一种 MVC 结构可以在只支持 web.xml 的老容器里原样运行，
+     也方便把 home 与 api 的映射集中在一处审计。
+     顺序遵循 Servlet 4.0 的内容模型：
+       context-param → filter → filter-mapping → servlet → servlet-mapping
+       → session-config → mime-mapping → welcome-file-list
+     ============================================================================ -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <display-name>XU-808 JavaEE MVC</display-name>
+
+    <!-- 应用级常量：JSP 里可用 ${applicationScope.xu808.name} 读取 -->
+    <context-param>
+        <param-name>xu808.name</param-name>
+        <param-value>XU-808 鼓机 - 徐某</param-value>
+    </context-param>
+    <context-param>
+        <param-name>xu808.version</param-name>
+        <param-value>10_javaee</param-value>
+    </context-param>
+
+    <!-- 全局编码过滤器：只覆盖动态请求。
+         徐某踩过的坑：如果把 /* 也交给它，Tomcat 的 DefaultServlet 会在
+         “响应已声明 charset”时改用 Writer 输出静态文件，中文注释会被
+         按平台默认编码（中文 Windows 是 GBK）二次编码，JS 就变成乱码。
+         所以这里只映射 /app 与 /api/*；静态资源交给容器原样字节输出。 -->
+    <filter>
+        <filter-name>XuEncodingFilter</filter-name>
+        <filter-class>xu808.web.XuEncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>XuEncodingFilter</filter-name>
+        <url-pattern>/app</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>XuEncodingFilter</filter-name>
+        <url-pattern>/api/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
+    <!-- 首页控制器：/app 转发到 WEB-INF/views/index.jsp -->
+    <servlet>
+        <servlet-name>xu808Home</servlet-name>
+        <servlet-class>xu808.web.HomeServlet</servlet-class>
+        <!-- 启动即加载，第一次访问不用再付类加载时间 -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>xu808Home</servlet-name>
+        <url-pattern>/app</url-pattern>
+    </servlet-mapping>
+
+    <!-- 工程 / 导出 API：/api/* 由 ProjectServlet 分发 -->
+    <servlet>
+        <servlet-name>xu808Api</servlet-name>
+        <servlet-class>xu808.web.ProjectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>xu808Api</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- 根路径 /xu808-javaee/ 直接落到 /app，用户不用记 Servlet 路径 -->
+    <welcome-file-list>
+        <welcome-file>app</welcome-file>
+    </welcome-file-list>
+
+    <!-- 会话保存工程 JSON；两小时足够，超时后回到示范节奏 -->
+    <session-config>
+        <session-timeout>120</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+    </session-config>
+
+    <!-- 静态资源 MIME：AudioWorklet 模块必须是 application/javascript -->
+    <mime-mapping>
+        <extension>js</extension>
+        <mime-type>application/javascript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mjs</extension>
+        <mime-type>application/javascript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>css</extension>
+        <mime-type>text/css</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>wav</extension>
+        <mime-type>audio/wav</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mid</extension>
+        <mime-type>audio/midi</mime-type>
+    </mime-mapping>
+</web-app>

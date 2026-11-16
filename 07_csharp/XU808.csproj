@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    XU-808 C# 版工程文件。
+    徐某选择 net10.0-windows + WinForms，是因为它能在任何装了 .NET 的 Windows 上
+    直接跑；再通过 PublishSingleFile + SelfContained 把运行时也塞进一个 EXE，
+    目标机器就真的“什么都没有也能跑”。
+
+    注意：本项目**不引用任何 NuGet 包**，音频走系统自带的 winmm.dll，
+    这样离线构建、离线部署都不会卡在还原依赖上。
+  -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>XU808-CSharp</AssemblyName>
+    <RootNamespace>Xu808</RootNamespace>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <Platforms>AnyCPU;x64</Platforms>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <DebugType>none</DebugType>
+    <SatelliteResourceLanguages>zh-Hans;en</SatelliteResourceLanguages>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Product>XU-808 鼓机</Product>
+    <Company>徐某</Company>
+    <Copyright>© 2026 徐某</Copyright>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 徐某：字符串资源集中管理，标题与规格书第 9 节一致 -->
+<resources>
+    <string name="app_name">XU-808 鼓机 - 徐某</string>
+    <string name="logo">XU-808</string>
+    <string name="subtitle">鼓机 · 徐某</string>
+</resources>

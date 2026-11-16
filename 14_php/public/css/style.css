@@ -1,0 +1,461 @@
+/* ==========================================================================
+   XU-808 Electron 样式 —— 深色 808 机身 + 橙色强调
+   徐某坚持所有版本共用同一套颜色常量，这样截图放在一起才像一家人。
+   ========================================================================== */
+:root {
+    --bg: #121212;
+    --panel: #1c1c1c;
+    --panel2: #232323;
+    --line: #2e2e2e;
+    --orange: #ff7a18;
+    --orange-d: #a84a0c;
+    --yellow: #ffd166;
+    --cyan: #4cc9f0;
+    --text: #e8e8e8;
+    --dim: #8a8a8a;
+    --red: #e5484d;
+    --cw: 30px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* ---------- 顶部 ---------- */
+#top {
+    height: 66px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    width: 200px;
+}
+
+.logo-main {
+    color: var(--orange);
+    font-family: Consolas, monospace;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.logo-sub {
+    color: var(--dim);
+    font-size: 8px;
+    margin-top: 3px;
+}
+
+button {
+    background: var(--panel2);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+button:hover {
+    border-color: var(--orange);
+}
+
+button:active {
+    background: var(--orange-d);
+}
+
+button.big {
+    width: 84px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+button.big.small {
+    width: 48px;
+}
+
+button.on {
+    background: var(--orange);
+    color: #1a1008;
+    border-color: var(--orange);
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.group > label {
+    color: var(--dim);
+    font-size: 9px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.inline {
+    color: var(--dim);
+    font-size: 9px;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.dim {
+    color: var(--dim);
+    font-size: 10px;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text);
+    font-size: 11px;
+}
+
+input[type="number"], select {
+    background: var(--panel2);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 3px 4px;
+    width: 68px;
+}
+
+input[type="range"] {
+    accent-color: var(--orange);
+    width: 100px;
+}
+
+#swingLabel {
+    color: var(--orange);
+    width: 34px;
+}
+
+/* ---------- 网格 ---------- */
+#gridScroll {
+    overflow: auto;
+    height: 396px;
+    border-bottom: 1px solid var(--line);
+}
+
+#grid {
+    display: inline-block;
+    min-width: 100%;
+    padding: 4px 8px 8px 8px;
+}
+
+.grid-head {
+    display: flex;
+    height: 22px;
+    color: var(--dim);
+}
+
+.grid-head .lab {
+    width: 132px;
+    flex: 0 0 132px;
+}
+
+.grid-head .num {
+    width: var(--cw);
+    flex: 0 0 var(--cw);
+    text-align: center;
+    font-size: 9px;
+    border-left: 1px solid transparent;
+}
+
+.grid-head .num.beat {
+    border-left-color: #3a3a3a;
+    color: #bbb;
+}
+
+.grid-row {
+    display: flex;
+    height: 22px;
+    align-items: stretch;
+}
+
+.grid-row:nth-child(odd) {
+    background: #161616;
+}
+
+.grid-row:nth-child(even) {
+    background: #1a1a1a;
+}
+
+.pad-label {
+    width: 132px;
+    flex: 0 0 132px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-left: 4px;
+}
+
+.pad-code {
+    color: var(--orange);
+    font-family: Consolas, monospace;
+    font-weight: bold;
+    font-size: 11px;
+    width: 26px;
+}
+
+.pad-name {
+    color: var(--text);
+    font-size: 10px;
+    width: 48px;
+}
+
+.ms {
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    font-size: 8px;
+    font-weight: bold;
+    color: var(--dim);
+    background: #2a2a2a;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.ms.on.m {
+    background: var(--red);
+    color: #121212;
+}
+
+.ms.on.s {
+    background: var(--yellow);
+    color: #121212;
+}
+
+.cell {
+    width: var(--cw);
+    flex: 0 0 var(--cw);
+    border: 1px solid #272727;
+    margin: 2px;
+    border-radius: 3px;
+    background: #101010;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7px;
+    color: #1a1008;
+    font-family: Consolas, monospace;
+}
+
+.cell.beat {
+    border-left-color: #3a3a3a;
+}
+
+.cell.on {
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+.cell.accent {
+    background: var(--yellow);
+    border-color: var(--yellow);
+}
+
+.cell.playhead {
+    outline: 2px solid var(--cyan);
+    outline-offset: -2px;
+}
+
+/* ---------- 通道条 ---------- */
+#stripsScroll {
+    height: 316px;
+    overflow: auto;
+    border-bottom: 1px solid var(--line);
+}
+
+#strips {
+    display: flex;
+    gap: 2px;
+    padding: 2px;
+}
+
+.strip {
+    width: 74px;
+    flex: 0 0 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    background: var(--bg);
+    border-right: 1px solid #1d1d1d;
+    padding-bottom: 2px;
+}
+
+.strip .name {
+    width: 72px;
+    height: 32px;
+    font-size: 9px;
+    color: var(--orange);
+    border-color: #3a2a1a;
+}
+
+.strip .ms-row {
+    display: flex;
+    gap: 2px;
+}
+
+.strip .ms-row .ms {
+    width: 30px;
+}
+
+.strip .plabel {
+    color: var(--dim);
+    font-size: 8px;
+}
+
+.vert {
+    writing-mode: vertical-lr;
+    direction: rtl;
+    width: 18px;
+    height: 46px;
+    accent-color: var(--orange);
+}
+
+.strip .len {
+    width: 60px;
+    padding: 1px;
+    font-size: 9px;
+}
+
+/* ---------- 主效果 ---------- */
+#master {
+    height: 92px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 4px 10px;
+    background: var(--panel);
+    flex-wrap: nowrap;
+}
+
+.master-title {
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 11px;
+    width: 130px;
+}
+
+.master-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    width: 118px;
+}
+
+.master-slider label {
+    color: var(--dim);
+    font-size: 9px;
+}
+
+.master-slider span {
+    color: var(--orange);
+    font-size: 9px;
+}
+
+.master-slider input {
+    width: 112px;
+}
+
+.meter {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.meter-bar {
+    width: 150px;
+    height: 8px;
+    background: #0c0c0c;
+    border-radius: 2px;
+}
+
+.meter-bar i {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #3ddc84, #ffd166 72%, #e5484d);
+}
+
+/* ---------- 弹窗 ---------- */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-box {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 20px;
+    width: 430px;
+}
+
+.modal-box h3 {
+    margin: 0 0 10px 0;
+    color: var(--orange);
+    font-size: 14px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form label {
+    display: flex;
+    justify-content: space-between;
+    color: var(--dim);
+}
+
+.form input[type="number"], .form select {
+    width: 130px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 14px;
+}

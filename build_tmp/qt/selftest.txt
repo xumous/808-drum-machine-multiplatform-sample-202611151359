@@ -1,0 +1,2 @@
+samples=240000 peak=0.3629 rms=0.1154
+SELFTEST OK

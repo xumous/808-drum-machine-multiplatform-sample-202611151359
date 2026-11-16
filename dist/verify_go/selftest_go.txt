@@ -1,0 +1,9 @@
+SELFTEST OK
+wav=960044
+song_wav=3648044
+midi=268
+json=2584572
+load=true
+voices=16/16
+min_peak=0.0600
+all_peak=0.4145

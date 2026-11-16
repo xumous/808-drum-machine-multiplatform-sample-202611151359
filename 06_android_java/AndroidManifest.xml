@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ==========================================================================
+     XU-808 鼓机 · Android 版清单文件（徐某手写，不依赖 Gradle/AndroidX）
+     包名 com.xumou.xu808，minSdk 28，targetSdk 28
+     ========================================================================== -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.xumou.xu808"
+          android:versionCode="1"
+          android:versionName="1.0">
+
+    <!-- SDK 版本区间：规格书硬性要求 API 28 起 -->
+    <uses-sdk android:minSdkVersion="28" android:targetSdkVersion="28"/>
+
+    <!-- 音频输出是唯一必需的硬件特性 -->
+    <uses-feature android:name="android.hardware.audio.output" android:required="true"/>
+    <!-- 用于音频焦点/音量建议，不涉及录音权限 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+
+    <!-- 应用主体：深色无标题主题，图标与标签见 res -->
+    <application
+            android:allowBackup="true"
+            android:hardwareAccelerated="true"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:theme="@style/Xu808Theme">
+
+        <!-- 唯一的 Activity：MVC 中的 Controller，自定义 View 由代码创建 -->
+        <activity
+                android:name=".MainActivity"
+                android:configChanges="orientation|screenSize|keyboardHidden|screenLayout"
+                android:exported="true"
+                android:label="@string/app_name"
+                android:launchMode="singleTask"
+                android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

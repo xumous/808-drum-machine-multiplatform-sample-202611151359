@@ -1,0 +1,5 @@
+SELFTEST OK
+wav=true bytes=960044 peak=11229 rms=3899.6
+midi=true bytes=268
+json=true roundtrip=true
+XU-808 Rust edition by 徐某

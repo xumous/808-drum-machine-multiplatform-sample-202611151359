@@ -1,0 +1,30 @@
+﻿rustup-init.exe : info: profile set to minimal
+At line:15 char:2222
++ ... -init.exe'; & $exe -y --profile minimal --default-host x86_64-pc-wind ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (info: profile set to minimal:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+info: setting default host tuple to x86_64-pc-windows-msvc
+
+info:
+ syncing channel updates for stable-x86_64-pc-windows-msvc
+
+info:
+ latest update on 2026-11-12 for version 1.100.0 (0ef1bc386 2026-11-09)
+
+info:
+ downloading 3 components
+
+info:
+ default toolchain set to stable-x86_64-pc-windows-msvc
+
+
+  stable-x86_64-pc-windows-msvc installed - rustc 1.100.0 (0ef1bc386 2026-11-09)
+
+
+Rust is installed now. Great!
+
+To get started you may need to restart your current shell.
+This would reload its PATH environment variable to include
+Cargo's bin directory (%USERPROFILE%\.cargo\bin).
